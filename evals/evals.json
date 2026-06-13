@@ -1,0 +1,35 @@
+{
+  "skill_name": "openclaw-expert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我的 openclaw 突然启动不了了，Gateway 一直在报错说端口被占用，怎么解决？",
+      "expected_output": "Skill should route to ops/fix.md, diagnose port conflict, check gateway troubleshooting docs and active experiences, suggest solution (kill competing process or change port).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我刚装了 openclaw 但不知道怎么配置 telegram channel，需要什么步骤？",
+      "expected_output": "Skill should route to ops/configure.md, guide through channels config, reference telegram channel docs in official-docs/providers/.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "openclaw 模型一直不回消息，是不是 api key 配置有问题？",
+      "expected_output": "Skill should route to ops/fix.md, classify as providers/model issue, check model status, guide debugging api key configuration.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "我用的 NixOS，怎么在 openclaw 里装插件？",
+      "expected_output": "Skill should route to ops/install.md (Nix path) + ops/configure.md (plugins), reference official-docs/install/ and official-docs/plugins/.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "openclaw 更新到最新版后 sandbox 报错，之前都能用的",
+      "expected_output": "Skill should route to ops/update.md first (version change detected), sync docs, run bug audit, then route to ops/fix.md for the sandbox issue.",
+      "files": []
+    }
+  ]
+}
