@@ -1,4 +1,89 @@
 {
-  "updated_at": "",
-  "experiences": []
+  "updated_at": "2026-06-14T12:19:06Z",
+  "experiences": [
+    {
+      "id": "exp-1781367708",
+      "title": "接入多个 Matrix 机器人并绑定独立 Agent",
+      "topic": "gateway",
+      "file": "active/gateway/-matrix--agent.md",
+      "keywords": "接入多个,matrix,机器人并绑定独立,agent",
+      "type": "experience",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-13T16:21:48Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781372490",
+      "title": "ACP Agent 配置",
+      "topic": "tools",
+      "file": "active/tools/acp-agent-.md",
+      "keywords": "acp,agent,配置",
+      "type": "experience",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-13T17:41:30Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781414379",
+      "title": "doctor --fix 移动 homeserver 导致 Matrix 全离线",
+      "topic": "gateway",
+      "file": "active/gateway/doctor---fix--homeserver--matrix-.md",
+      "keywords": "doctor,--fix,移动,homeserver,导致,matrix,全离线",
+      "type": "bug",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-14T05:19:39Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781424164",
+      "title": "Matrix bot autoJoin:off 导致私聊无响应",
+      "topic": "providers",
+      "file": "active/providers/matrix-bot-autojoinoff-.md",
+      "keywords": "matrix,bot,autojoin:off,导致私聊无响应",
+      "type": "bug",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-14T08:02:44Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781427289",
+      "title": "Matrix ACP Session Duplicate Reply (live deliveryMode)",
+      "topic": "providers",
+      "file": "active/providers/matrix-acp-session-duplicate-reply-live-deliverymode.md",
+      "keywords": "matrix,acp,session,duplicate,reply,(live,deliverymode)",
+      "type": "bug",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-14T08:54:49Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781437959",
+      "title": "Matrix 群聊 ACP 命令授权配置",
+      "topic": "providers",
+      "file": "active/providers/matrix--acp-.md",
+      "keywords": "matrix,群聊,acp,命令授权配置",
+      "type": "experience",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-14T11:52:39Z",
+      "openclaw_version": "2026.6.6"
+    },
+    {
+      "id": "exp-1781439546",
+      "title": "Matrix 群聊多 bot 响应逻辑改造",
+      "topic": "providers",
+      "file": "active/providers/matrix--bot-.md",
+      "keywords": "matrix,群聊多,bot,响应逻辑改造",
+      "type": "experience",
+      "related_bug": null,
+      "status": "active",
+      "created_at": "2026-06-14T12:19:06Z",
+      "openclaw_version": "2026.6.6"
+    }
+  ]
 }

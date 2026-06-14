@@ -32,6 +32,15 @@
 # 添加经验
 ./scripts/knowledge-manager.sh add-experience --topic <topic> --title <title> --content <file> --type <bug|experience>
 
+# 合并经验（默认 --mode replace，自动备份旧文件为 .bak）
+./scripts/knowledge-manager.sh merge-experience --existing <topic/filename.md> --content <file>
+
+# 经验合并工作流：
+# 1. read 已有经验文件
+# 2. 对比新旧内容，去重、整合、精简为一份完整文件
+# 3. 将合并结果写入临时文件，展示 diff 给用户确认
+# 4. 用户确认后，merge-experience 写入（自动备份旧文件为 .bak）
+
 # 归档经验
 ./scripts/knowledge-manager.sh archive-experience --id <exp-id> --fixed-in <version>
 

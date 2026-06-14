@@ -20,8 +20,10 @@ usage() {
   echo "  add-experience --topic <topic> --title <title> --content <file> --type <bug|experience>"
   echo "      Add a new experience file and update index"
   echo ""
-  echo "  merge-experience --existing <file> --content <file>"
+  echo "  merge-experience --existing <file> --content <file> [--mode replace|append]"
   echo "      Merge new content into existing experience file"
+  echo "      --mode replace (default): replaces entire file with content (caller must pre-merge)"
+  echo "      --mode append: appends with separator and date header (legacy, avoid)"
   echo ""
   echo "  archive-experience --id <exp-id> --fixed-in <version>"
   echo "      Move an experience from active/ to archived/"
@@ -155,11 +157,12 @@ print('Added: $EXP_ID')
 }
 
 merge_experience() {
-  local existing_file="" content_file=""
+  local existing_file="" content_file="" mode="replace"
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --existing) existing_file="$2"; shift 2 ;;
       --content) content_file="$2"; shift 2 ;;
+      --mode) mode="$2"; shift 2 ;;
       *) shift ;;
     esac
   done
@@ -175,16 +178,27 @@ merge_experience() {
     exit 1
   fi
 
-  {
-    cat "$FULL_EXISTING"
-    echo ""
-    echo "---"
-    echo "## 补充经验（$(date -u +"%Y-%m-%d")）"
-    cat "$content_file"
-  } > "${FULL_EXISTING}.tmp"
+  if [ ! -s "$content_file" ]; then
+    echo "Error: content file is empty, refusing to merge: $content_file"
+    exit 1
+  fi
 
-  mv "${FULL_EXISTING}.tmp" "$FULL_EXISTING"
-  echo "Merged into: $existing_file"
+  if [ "$mode" = "replace" ]; then
+    rm -f "${FULL_EXISTING}.bak"
+    cp "$FULL_EXISTING" "${FULL_EXISTING}.bak"
+    cp "$content_file" "$FULL_EXISTING"
+    echo "Replaced: $existing_file (backup at ${existing_file}.bak)"
+  else
+    {
+      cat "$FULL_EXISTING"
+      echo ""
+      echo "---"
+      echo "## 补充经验（$(date -u +"%Y-%m-%d")）"
+      cat "$content_file"
+    } > "${FULL_EXISTING}.tmp"
+    mv "${FULL_EXISTING}.tmp" "$FULL_EXISTING"
+    echo "Merged into: $existing_file"
+  fi
 }
 
 archive_experience() {

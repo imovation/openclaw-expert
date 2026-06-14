@@ -40,6 +40,9 @@ openclaw channels add
 
 支持的 channel：Telegram、WhatsApp、Discord、Slack、Signal、iMessage、Matrix、Microsoft Teams。配置 `~/.openclaw/openclaw.json` 中的 `channels` 部分。
 
+#### Matrix 群聊多 bot 配置
+如果配置 Matrix 群聊中的多个 bot 账号（如 `autoReply: true`），请注意 `references/experience/active/providers/matrix--bot-.md` 中记录的源码改造依赖。该改造实现了"无 @提及全回复、@提及仅目标"的分流逻辑。OpenClaw 升级后需重新应用补丁，否则 `autoReply: true` 会恢复为"所有消息触发所有 bot"的原始行为。
+
 ### Gateway 配置
 
 查阅 `references/official-docs/gateway/`。关键配置项：端口、绑定地址、远程访问。运行：
